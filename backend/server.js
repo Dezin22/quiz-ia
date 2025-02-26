@@ -4,7 +4,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5000",
-      "https://seu-usuario.github.io", // Substitua com seu domínio do GitHub Pages
+      "https://dezin22.github.io/quiz-ia/", // Substitua com seu domínio do GitHub Pages
     ],
     methods: ["GET", "POST"],
     credentials: true,
