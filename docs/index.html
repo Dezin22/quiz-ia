@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz de IA</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-indigo-600 mb-2">Quiz de IA</h1>
+        <p class="text-lg text-gray-600">
+          Teste seus conhecimentos com perguntas geradas por inteligência
+          artificial
+        </p>
+      </header>
+
+      <main class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
+        <div id="start-screen" class="text-center py-10">
+          <p class="text-xl mb-6">Pronto para testar seus conhecimentos?</p>
+          <button
+            id="start-button"
+            class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-200"
+          >
+            Iniciar Quiz
+          </button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+          <div class="mb-6">
+            <div class="flex justify-between items-center mb-4">
+              <span id="question-number" class="text-gray-500 font-medium"
+                >Pergunta 1/10</span
+              >
+              <span id="timer" class="text-gray-500 font-medium">30</span>
+            </div>
+            <h2 id="question-text" class="text-xl font-semibold mb-6">
+              A pergunta gerada pela IA aparecerá aqui.
+            </h2>
+
+            <div id="options-container" class="space-y-3">
+              <!-- Opções serão inseridas dinamicamente -->
+            </div>
+          </div>
+
+          <div class="flex justify-between mt-8">
+            <button
+              id="next-button"
+              class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition duration-200 hidden"
+            >
+              Próxima Pergunta
+            </button>
+            <button
+              id="new-question-button"
+              class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition duration-200"
+            >
+              Nova Pergunta
+            </button>
+          </div>
+        </div>
+
+        <div id="feedback-screen" class="text-center py-8 hidden">
+          <div
+            id="correct-answer"
+            class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 hidden"
+          >
+            <p class="font-bold">Resposta Correta!</p>
+            <p id="correct-explanation"></p>
+          </div>
+          <div
+            id="wrong-answer"
+            class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 hidden"
+          >
+            <p class="font-bold">Resposta Incorreta!</p>
+            <p>A resposta correta era: <span id="correct-option"></span></p>
+            <p id="wrong-explanation"></p>
+          </div>
+        </div>
+
+        <div id="result-screen" class="text-center py-10 hidden">
+          <h2 class="text-2xl font-bold mb-4">Resultado Final</h2>
+          <p class="text-4xl font-bold text-indigo-600 mb-6">
+            <span id="score">0</span>/10
+          </p>
+          <p class="mb-6">
+            Você acertou <span id="percentage">0</span>% das perguntas!
+          </p>
+          <button
+            id="restart-button"
+            class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-200"
+          >
+            Jogar Novamente
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
