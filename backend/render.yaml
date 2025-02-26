@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: quiz-ia-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false

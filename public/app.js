@@ -38,7 +38,7 @@ let currentQuizData = {
 const API_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:3000"
-    : "https://sua-api-hospedada.com"; // você precisará hospedar o backend em outro lugar
+    : "https://quiz-ia-backend.onrender.com"; // URL fornecida pelo Render
 
 // API para obter perguntas da IA
 async function fetchQuestion() {
@@ -129,7 +129,7 @@ async function loadNewQuestion() {
 
   // Mostrar loading
   questionText.textContent = "Carregando pergunta...";
-  newQuestionButton.classList.add("hidden");
+  newQuestionButton.disabled = true; // Desabilitar botão durante carregamento
 
   try {
     // Obter nova pergunta da API
@@ -175,9 +175,9 @@ async function loadNewQuestion() {
         "Erro ao carregar pergunta. Tente novamente mais tarde.";
     }
   } catch (error) {
-    questionText.textContent =
-      "Erro ao carregar pergunta. Tente novamente mais tarde.";
-    console.error(error);
+    questionText.textContent = "Erro ao carregar pergunta. Tente novamente.";
+  } finally {
+    newQuestionButton.disabled = false; // Reabilitar botão
   }
 }
 
