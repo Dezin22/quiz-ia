@@ -57,7 +57,7 @@ async function fetchQuestion() {
       throw new Error(`Erro HTTP: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Pergunta recebida:", data);
+    console.log("Pergunta recebida:");
 
     // Adicionar a pergunta ao conjunto de perguntas usadas
     usedQuestions.add(data.question);
@@ -129,6 +129,7 @@ async function loadNewQuestion() {
 
   // Mostrar loading
   questionText.textContent = "Carregando pergunta...";
+  newQuestionButton.classList.add("hidden");
   newQuestionButton.disabled = true; // Desabilitar botão durante carregamento
 
   try {
