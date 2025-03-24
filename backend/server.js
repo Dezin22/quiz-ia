@@ -199,21 +199,6 @@ Retorne apenas o JSON puro:
 }
 
 // Pergunta padrão otimizada
-function getDefaultQuestion() {
-  const options = ["JavaScript", "Python", "Java", "C++"];
-  const correctIndex = Math.floor(Math.random() * 4);
-  const correctOption = options[0];
-  options.splice(0, 1);
-  options.splice(correctIndex, 0, correctOption);
-
-  return {
-    question: "Qual é a linguagem de programação mais popular atualmente?",
-    options,
-    correctIndex,
-    explanation: "JavaScript é a linguagem mais usada na web.",
-    category: "tecnologia",
-  };
-}
 
 // Rota otimizada para perguntas
 app.post("/api/question", async (req, res) => {

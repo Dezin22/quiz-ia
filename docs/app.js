@@ -35,10 +35,7 @@ let currentQuizData = {
 };
 
 // Modificar a URL da API para apontar para seu backend hospedado
-const API_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:3000"
-    : "https://quiz-ia-backend.onrender.com"; // URL fornecida pelo Render
+const API_URL = window.API_URL || "https://quiz-ia-backend.onrender.com";
 
 // API para obter perguntas da IA
 async function fetchQuestion() {

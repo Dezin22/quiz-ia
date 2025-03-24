@@ -3,9 +3,15 @@ services:
     name: quiz-ia-backend
     env: node
     buildCommand: npm install
-    startCommand: node server.js
+    startCommand: node backend/server.js
     envVars:
       - key: MONGODB_URI
         sync: false
       - key: DEEPSEEK_API_KEY
         sync: false
+      - key: NODE_ENV
+        value: production
+    headers:
+      - path: /*
+        name: Access-Control-Allow-Origin
+        value: https://dezin22.github.io
