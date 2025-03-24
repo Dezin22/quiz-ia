@@ -48,7 +48,7 @@ async function connectToMongoDB() {
         deprecationErrors: true,
       },
       ssl: true,
-      sslValidate: false,
+      tlsAllowInvalidCertificates: true,
       retryWrites: true,
       w: "majority",
       // Configurações de pool atualizadas para versão mais recente
